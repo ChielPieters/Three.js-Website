@@ -4,7 +4,7 @@ import glsl from 'vite-plugin-glsl'
 export default {
     root: 'src/',
     publicDir: '../static/',
-    base: './',
+    base: process.env.NODE_ENV === 'production' ? '/Three.js-Website/' : '',
     server:
     {
         host: true, // Open to local network and display URL
