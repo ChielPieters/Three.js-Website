@@ -37,6 +37,8 @@ jobs:
           node-version: 20
       - name: Install dependencies
         run: npm install
+      - run: ls -la node_modules/.bin
+      - run: npx vite --version
       - name: Build project
         run: npm run build
       - name: Setup Pages
