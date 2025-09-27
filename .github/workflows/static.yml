@@ -20,10 +20,6 @@ jobs:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
-    defaults:
-      run:
-        # Stel de werkdirectory in als jouw package.json in Website/ staat
-        working-directory: Website
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -51,7 +47,7 @@ jobs:
         uses: actions/upload-pages-artifact@v3
         with:
           # Upload de build output (Vite zet dit standaard in dist/)
-          path: Website/dist
+          path: dist
 
       - name: Deploy to GitHub Pages
         id: deployment
